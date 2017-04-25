@@ -1,8 +1,8 @@
 package org.exampledriven.oauth.customer.shared.server.server.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoRestTemplateFactory;
-import org.springframework.security.oauth2.client.OAuth2RestOperations;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountRelayController {
 
     @Autowired
-    private OAuth2RestOperations restTemplate;
+    OAuth2RestTemplate oAuth2RestTemplate;
 
-    @Autowired
-    UserInfoRestTemplateFactory userInfoRestTemplateFactory;
-
-    @RequestMapping("/account-relay")
+    @GetMapping("/account-relay")
     public String getAccount() {
 
-        String account = restTemplate.getForEntity("http://localhost:9099/account", String.class).getBody();
-        return account;
+        String body = oAuth2RestTemplate.getForEntity("http://localhost:9099/account", String.class).getBody();
+
+        return body;
 
     }
-
 }

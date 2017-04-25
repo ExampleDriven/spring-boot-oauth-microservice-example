@@ -37,23 +37,21 @@ public class Application extends ResourceServerConfigurerAdapter {
 
     }
 
-//    @Configuration
-//    @EnableOAuth2Client
-//    static class OauthClient {
-//
-//
-//        @Bean
-//        @Qualifier("OAuth")
-//        public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
-//                                                     OAuth2ProtectedResourceDetails details) {
-//            return new OAuth2RestTemplate(details, oauth2ClientContext);
-//        }
-//
-//    }
+    @Configuration
+    @EnableOAuth2Client
+    static class OauthClient {
+
+        @Bean
+        public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
+                                                     OAuth2ProtectedResourceDetails details) {
+            return new OAuth2RestTemplate(details, oauth2ClientContext);
+        }
+
+    }
 
     @Configuration
     public class WorkaroundConfig extends WebMvcConfigurerAdapter {
-        // until the below are merged
+        // until the below are fixed
         // https://github.com/spring-cloud/spring-cloud-security/issues/123
         // https://github.com/spring-cloud/spring-cloud-security/pull/124
 

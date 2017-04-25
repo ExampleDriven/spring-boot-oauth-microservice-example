@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ExampleDriven/spring-boot-oauth-microservice-example.svg?branch=master)](https://travis-ci.org/ExampleDriven/spring-boot-oauth-microservice-example)
-# spring-cloud-oauth-microservice-example
+# spring-boot-oauth-microservice-example
 
 This is the source code for the blog post
 

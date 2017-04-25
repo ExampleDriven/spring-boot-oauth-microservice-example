@@ -1,0 +1,25 @@
+server:
+  port: 9098
+
+management:
+  security:
+    enabled: false
+  trace:
+    include: request_headers,response_headers,cookies,authorization_header,errors,path_info,path_translated,context_path,user_principal,parameters,query_string,auth_type,remote_address,session_id,remote_user
+
+
+security:
+  sessions: stateless
+  user:
+    password: none
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimUKhvBhsoeSM3HkIOP/Y3RXjvonBlZnLj8oO92TyAKG53lmAoK0wZ5MTZPsfrOz2Z7CeAp6mPhUANX2RUoFwVzG7rJmgWyqGmGFNBmtYL+uVqQ80TzWi5zyzXTxgVMWiCqqw/u4AeE1qhN8chnGwhUBnpgPAPd8v57mIwg0n5JxjdYe7pgHlpvt8ZXTXd1KBxB5K7WjNlCfMf75ZEeBaplxsSfJUwKbnHQKWcY3NnpjkVR8y4jviAbkOHmGMaliM7fcsLzbosBUPDQuNlvYdjPBRfH6MMPeXRW6On3u0Um9wIYmkQS+AEgHCq4UuLOnTTqqxnGkwFYeMAAXmRyMtQIDAQAB
+          -----END PUBLIC KEY-----
+
+logging:
+  level:
+    org.springframework.security: DEBUG

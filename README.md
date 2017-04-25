@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ExampleDriven/spring-boot-oauth-microservice-example.svg?branch=master)](https://travis-ci.org/ExampleDriven/spring-boot-oauth-microservice-example)
-# spring-cloud-zuul-example
+# spring-cloud-oauth-microservice-example
 
 This is the source code for the blog post
 
@@ -10,8 +10,8 @@ Feature |test url
 --- |---
 Web (Zuul) | http://localhost:9090/
 Local OAuth request | http://localhost:9090/me
-Proxied OAuth request | http://localhost:9090/customer/account-relay2
-Proxied + Relayed OAuth request | http://localhost:9090/customer/customer/1
+Proxied OAuth request | http://localhost:9090/customer/customer/1
+Proxied + Relayed OAuth request | http://localhost:9090/customer/account-relay2
 Trace showing OAuth token | http://localhost:9090/customer/trace
 
 
